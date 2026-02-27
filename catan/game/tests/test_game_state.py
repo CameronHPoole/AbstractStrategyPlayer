@@ -34,7 +34,7 @@ class TestGameState:
             assert gs.vp[i] == 0
 
     def test_clone_is_new_object(self):
-        gs = GameState.new_game(STANDARD_BOARD, 3)
+        gs = GameState.new_game(STANDARD_BOARD, 2)
         gs_clone = gs.clone()
         assert gs_clone == gs
         assert gs_clone is not gs
