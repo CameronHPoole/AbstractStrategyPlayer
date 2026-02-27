@@ -15,7 +15,7 @@ class TestGameState:
 
     def test_invalid_current_player(self):
         with pytest.raises(ValueError):
-            GameState(STANDARD_BOARD, 4, -1, {}, {}, Phases.SETUP)
+            GameState(STANDARD_BOARD, 4, -1, {r: ResourceMap() for r in range(4)}, {p: 0 for p in range(4)}, Phases.SETUP)
 
     def test_valid_new_game(self):
         gs = GameState.new_game(STANDARD_BOARD, 2)
