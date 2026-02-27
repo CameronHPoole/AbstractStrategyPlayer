@@ -7,11 +7,10 @@ import copy
 
 class Phases(Enum):
     SETUP = 0
-    ROLL = 1 # resource production
-    TRADE = 2
-    BUILD = 3
-    ROBBER = 4 # triggered by a 7 roll
-    GAME_OVER = 5
+    ROLL = 1                # resource production
+    BUILD_AND_TRADE = 2
+    ROBBER = 3              # triggered by a 7 roll
+    GAME_OVER = 4
 
 @dataclass(frozen=True)
 class GameState:
