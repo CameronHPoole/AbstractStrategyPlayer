@@ -12,16 +12,21 @@ class Catanatron.models.Player {
 
 class Catanatron.models.RandomPlayer {
     Picks a random playable_action
+    + decide(...)
 }
 
 class Catanatron.models.HumanPlayer {
     Picks an action based on standard input
+    + decide(...)
 }
 
 class Catanatron.players.MCTSPlayer {
     Uses a Monte Carlo Tree Search to decide action
     + num_simulations: int
     + prunning: bool
+    + decide(game: Game, playable_actions)
+    ^ list_prunned_actions(game)
+    ^ choose_best_action()
 }
 
 class Catanatron.players.AlphaBetaPlayer {
@@ -33,12 +38,17 @@ class Catanatron.players.AlphaBetaPlayer {
     + params = "DEFAULT_WEIGHTS"
     + use_value_function
     + epsilon
+    + value_function(game: Game, p0_color)
+    + get_actions(game: Game)
+    + decide(game: Game, playable_actions)
+    + alphabeta(game: Game, depth, alpha, beta, deadline, node)
 }
 
 class AbstractStrategyPlayer.SOARAgent {
     Builds on MCTS as the tree search algorithm 
     but with elements of the SOAR Cognitive Architecture 
     used to learn and decide
+    + decide(...)
 }
 
 Player <|-- RandomPlayer
