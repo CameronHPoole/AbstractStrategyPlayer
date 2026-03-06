@@ -14,3 +14,4 @@ catan/board/__pycache__/coordinates.cpython-313.pyc
 catan/board/__pycache__/board.cpython-313.pyc
 catan/board/__pycache__/board_layout.cpython-313.pyc
 __pycache__/conftest.cpython-313-pytest-9.0.2.pyc
+__pycache__/conftest.cpython-312-pytest-9.0.2.pyc

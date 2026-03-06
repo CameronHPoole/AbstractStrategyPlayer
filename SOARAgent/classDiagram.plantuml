@@ -1,0 +1,50 @@
+@startuml SOAR Framework
+skinparam ClassAttributeIconSize 0
+title SOAR Framework
+
+class Catanatron.models.Player {
+    Base class provided by Catanatron
+    + color: Color
+    + is_bot: bool
+    + decide(game, playable_actions): -> Action | Offer_trade
+    + reset_state()
+}
+
+class Catanatron.models.RandomPlayer {
+    Picks a random playable_action
+}
+
+class Catanatron.models.HumanPlayer {
+    Picks an action based on standard input
+}
+
+class Catanatron.players.MCTSPlayer {
+    Uses a Monte Carlo Tree Search to decide action
+    + num_simulations: int
+    + prunning: bool
+}
+
+class Catanatron.players.AlphaBetaPlayer {
+    Uses a MiniMax tree search with 
+    optional alpha-beta prunning 
+    + depth: int
+    + prunning: bool
+    + value_fn_builder_name: "contender_fn" | "base_fn"
+    + params = "DEFAULT_WEIGHTS"
+    + use_value_function
+    + epsilon
+}
+
+class AbstractStrategyPlayer.SOARAgent {
+    Builds on MCTS as the tree search algorithm 
+    but with elements of the SOAR Cognitive Architecture 
+    used to learn and decide
+}
+
+Player <|-- RandomPlayer
+Player <|-- HumanPlayer
+
+Player <|-- MCTSPlayer
+Player <|-- AlphaBetaPlayer
+
+Player <|-- SOARAgent
