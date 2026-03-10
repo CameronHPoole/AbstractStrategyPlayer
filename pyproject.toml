@@ -1,0 +1,19 @@
+[project]
+name = "strategy-player"
+version = "0.0.1"
+authors = [
+  { name="Cameron Poole", email="cameronhpoole.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = [LICENSE]
+
+[project.urls]
+Homepage = "https://github.com/CameronHPoole/abstract-strategy-player"
+Issues = "https://github.com/CameronHPoole/abstract-strategy-player/issues"
