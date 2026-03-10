@@ -1,2 +1,2 @@
-# CatanPlayer
-A Catan playing engine with tiers of classical AI algorithms and built-in benchmarking
+# Abstract Strategy Player
+A game playing agent built with human cognition in mind
